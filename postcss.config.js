@@ -1,8 +1,10 @@
 module.exports = {
-  plugins: {
-    'postcss-fontpath': { checkFiles: true, ie8Fix: true },
-    'tailwindcss': 'tailwind.config.js',
-    '@fullhuman/postcss-purgecss': process.env.NODE_ENV === 'production',
-    'autoprefixer': {},
-  },
+  plugins: [
+    require('tailwindcss'),
+    require('postcss-fontpath')({ checkFiles: true, ie8Fix: true }),
+    require('autoprefixer'),
+    ...process.env.NODE_ENV === 'production'
+      ? [require('@fullhuman/postcss-purgecss')]
+      : [],
+  ],
 }
