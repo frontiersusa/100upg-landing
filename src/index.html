@@ -5,44 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="assets/css/index.css" />
+    <script
+      src="https://fast.wistia.com/embed/medias/5eqyexs05y.jsonp"
+      async
+    ></script>
+    <script
+      src="https://fast.wistia.com/assets/external/E-v1.js"
+      async
+    ></script>
     <title>100 UPG</title>
   </head>
   <body>
-    <header>
-      <h1 class="text-4xl text-red-500">
-        100 UPG Image
-      </h1>
-      <h2>
-        Catalyzing church planting movements among 100 unreached people groups.
-      </h2>
-    </header>
-    <section>
-      Video will go here
-    </section>
-    <section>
-      <h3>Our Story</h3>
-      <p>
-        In 2014, The Austin Stone Community Church began asking God for a
-        greater vision for the unreached. At the same time, God was also giving
-        Redeemer Church in Lubbock and The Village Church in Dallas/Ft. Worth an
-        even deeper desire to see Jesus known among unreached people groups.
-      </p>
-      <p>
-        Three different churches. Three different cities. One vision. One
-        desire.
-      </p>
-      <p>
-        Through much prayer and discernment, these churches linked arms with
-        Frontiers, Launch Global, and Reliant Mission to form the 100 UPG
-        Cooperative. Together, our vision is to catalyze church planting
-        movements among 100 unreached people groups.
-      </p>
-    </section>
-    <section>
-      <h3>100 UPG Cooperative Partners</h3>
-      <div>
-        Logos will go here
+    <header class="bg-gray-100">
+      <div class="container mx-auto text-center py-24 px-6">
+        <h1 class="text-4xl">
+          <!-- TODO: Replace with .png and alt text -->
+          <include src="partials/logo.html" />
+        </h1>
+        <h2 class="text-mint font-bold text-4xl max-w-3xl mx-auto mt-6">
+          Catalyzing church planting movements among 100 unreached people
+          groups.
+        </h2>
       </div>
+    </header>
+    <section class="bg-mint section-video">
+      <div class="container mx-auto">
+        <div class="max-w-3xl mx-auto">
+          <include src="partials/video.html" />
+        </div>
+        <div class="pt-16 pb-10 section-logos">
+          <h3
+            class="text-2xl text-white mb-8 text-center font-bold uppercase tracking-wider"
+          >
+            Cooperative Partners
+          </h3>
+          <ul class="flex items-center justify-center flex-wrap">
+            <li>
+              <img src="assets/img/Redeemer.png" alt="Redeemer" />
+            </li>
+            <li>
+              <img src="assets/img/TAS.png" alt="The Austin Stone" />
+            </li>
+            <li><img src="assets/img/The-Village.png" alt="The Village" /></li>
+            <li>
+              <img src="assets/img/Frontiers.png" alt="Frontiers" />
+            </li>
+            <li>
+              <img src="assets/img/Launch-Global.png" alt="Launch Global" />
+            </li>
+            <li>
+              <img src="assets/img/Reliant.png" alt="Reliant" />
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="bg-astro-blue text-white">
+      <div class="container mx-auto">
+        <h3 class="text-3xl font-bold">Our Story</h3>
+        <p>
+          In 2014, The Austin Stone Community Church began asking God for a
+          greater vision for the unreached. At the same time, God was also
+          giving Redeemer Church in Lubbock and The Village Church in Dallas/Ft.
+          Worth an even deeper desire to see Jesus known among unreached people
+          groups.
+        </p>
+        <p>
+          Three different churches. Three different cities. One vision. One
+          desire.
+        </p>
+        <p>
+          Through much prayer and discernment, these churches linked arms with
+          Frontiers, Launch Global, and Reliant Mission to form the 100 UPG
+          Cooperative. Together, our vision is to catalyze church planting
+          movements among 100 unreached people groups.
+        </p>
+      </div>
+    </section>
     </section>
     <section>
       <h3>FAQ's</h3>
