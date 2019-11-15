@@ -627,23 +627,107 @@ video {
   }
 }
 
+::-moz-selection {
+  background-color: #99dbbb;
+  color: #000;
+}
+
+::-moz-selection,
+::selection {
+  background-color: #99dbbb;
+  color: #000;
+}
+
+p {
+  margin-bottom: 1.5rem;
+}
+
+a {
+  color: #47c386;
+  border-bottom-width: 2px;
+  border-color: #99dbbb;
+}
+
+a:hover {
+  border-color: #47c386;
+}
+
+details {
+  color: #2d3748;
+}
+
+summary {
+  display: block;
+  position: relative;
+  color: #000;
+}
+
+summary:hover {
+  color: #47c386;
+}
+
+summary::before,
+summary::after {
+  width: 0.75em;
+  height: 2px;
+  top: 50%;
+  content: "";
+  background-color: currentColor;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+  position: absolute;
+  right: 0;
+  text-align: right;
+}
+
+summary::after {
+  -webkit-transform: translateY(-50%) rotate(90deg);
+          transform: translateY(-50%) rotate(90deg);
+}
+
+[open] summary::after {
+  -webkit-transform: translateY(-50%) rotate(180deg);
+          transform: translateY(-50%) rotate(180deg);
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
 .section-video {
   background: -webkit-gradient(
     linear,
     left top, left bottom,
     color-stop(20%, #f7fafc),
-    color-stop(20%, #47c386)
+    color-stop(20%, #1b465b)
   );
   background: linear-gradient(
     180deg,
     #f7fafc 20%,
-    #47c386 20%
+    #1b465b 20%
   );
 }
 
-.section-logos li {
-  margin-bottom: 2.5rem;
-  margin-right: 2.5rem;
+.section-questions details:not(summary) div {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.section-questions summary {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom-width: 1px;
+  border-color: #e2e8f0;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .sr-only {
@@ -1086,15 +1170,19 @@ video {
   background-color: #47c386;
 }
 
-.bg-astro-blue {
+.bg-mint-fade {
+  background-color: #99dbbb;
+}
+
+.bg-astro {
   background-color: #1b465b;
 }
 
-.bg-summary-sky {
+.bg-sky {
   background-color: #36b2db;
 }
 
-.bg-dove-gray {
+.bg-dove {
   background-color: #6f6f6c;
 }
 
@@ -1474,15 +1562,19 @@ video {
   background-color: #47c386;
 }
 
-.hover\:bg-astro-blue:hover {
+.hover\:bg-mint-fade:hover {
+  background-color: #99dbbb;
+}
+
+.hover\:bg-astro:hover {
   background-color: #1b465b;
 }
 
-.hover\:bg-summary-sky:hover {
+.hover\:bg-sky:hover {
   background-color: #36b2db;
 }
 
-.hover\:bg-dove-gray:hover {
+.hover\:bg-dove:hover {
   background-color: #6f6f6c;
 }
 
@@ -1862,15 +1954,19 @@ video {
   background-color: #47c386;
 }
 
-.focus\:bg-astro-blue:focus {
+.focus\:bg-mint-fade:focus {
+  background-color: #99dbbb;
+}
+
+.focus\:bg-astro:focus {
   background-color: #1b465b;
 }
 
-.focus\:bg-summary-sky:focus {
+.focus\:bg-sky:focus {
   background-color: #36b2db;
 }
 
-.focus\:bg-dove-gray:focus {
+.focus\:bg-dove:focus {
   background-color: #6f6f6c;
 }
 
@@ -2330,15 +2426,19 @@ video {
   border-color: #47c386;
 }
 
-.border-astro-blue {
+.border-mint-fade {
+  border-color: #99dbbb;
+}
+
+.border-astro {
   border-color: #1b465b;
 }
 
-.border-summary-sky {
+.border-sky {
   border-color: #36b2db;
 }
 
-.border-dove-gray {
+.border-dove {
   border-color: #6f6f6c;
 }
 
@@ -2718,15 +2818,19 @@ video {
   border-color: #47c386;
 }
 
-.hover\:border-astro-blue:hover {
+.hover\:border-mint-fade:hover {
+  border-color: #99dbbb;
+}
+
+.hover\:border-astro:hover {
   border-color: #1b465b;
 }
 
-.hover\:border-summary-sky:hover {
+.hover\:border-sky:hover {
   border-color: #36b2db;
 }
 
-.hover\:border-dove-gray:hover {
+.hover\:border-dove:hover {
   border-color: #6f6f6c;
 }
 
@@ -3106,15 +3210,19 @@ video {
   border-color: #47c386;
 }
 
-.focus\:border-astro-blue:focus {
+.focus\:border-mint-fade:focus {
+  border-color: #99dbbb;
+}
+
+.focus\:border-astro:focus {
   border-color: #1b465b;
 }
 
-.focus\:border-summary-sky:focus {
+.focus\:border-sky:focus {
   border-color: #36b2db;
 }
 
-.focus\:border-dove-gray:focus {
+.focus\:border-dove:focus {
   border-color: #6f6f6c;
 }
 
@@ -7868,63 +7976,83 @@ video {
   color: #47c386;
 }
 
-.placeholder-astro-blue::-webkit-input-placeholder {
+.placeholder-mint-fade::-webkit-input-placeholder {
+  color: #99dbbb;
+}
+
+.placeholder-mint-fade::-moz-placeholder {
+  color: #99dbbb;
+}
+
+.placeholder-mint-fade:-ms-input-placeholder {
+  color: #99dbbb;
+}
+
+.placeholder-mint-fade::-ms-input-placeholder {
+  color: #99dbbb;
+}
+
+.placeholder-mint-fade::placeholder {
+  color: #99dbbb;
+}
+
+.placeholder-astro::-webkit-input-placeholder {
   color: #1b465b;
 }
 
-.placeholder-astro-blue::-moz-placeholder {
+.placeholder-astro::-moz-placeholder {
   color: #1b465b;
 }
 
-.placeholder-astro-blue:-ms-input-placeholder {
+.placeholder-astro:-ms-input-placeholder {
   color: #1b465b;
 }
 
-.placeholder-astro-blue::-ms-input-placeholder {
+.placeholder-astro::-ms-input-placeholder {
   color: #1b465b;
 }
 
-.placeholder-astro-blue::placeholder {
+.placeholder-astro::placeholder {
   color: #1b465b;
 }
 
-.placeholder-summary-sky::-webkit-input-placeholder {
+.placeholder-sky::-webkit-input-placeholder {
   color: #36b2db;
 }
 
-.placeholder-summary-sky::-moz-placeholder {
+.placeholder-sky::-moz-placeholder {
   color: #36b2db;
 }
 
-.placeholder-summary-sky:-ms-input-placeholder {
+.placeholder-sky:-ms-input-placeholder {
   color: #36b2db;
 }
 
-.placeholder-summary-sky::-ms-input-placeholder {
+.placeholder-sky::-ms-input-placeholder {
   color: #36b2db;
 }
 
-.placeholder-summary-sky::placeholder {
+.placeholder-sky::placeholder {
   color: #36b2db;
 }
 
-.placeholder-dove-gray::-webkit-input-placeholder {
+.placeholder-dove::-webkit-input-placeholder {
   color: #6f6f6c;
 }
 
-.placeholder-dove-gray::-moz-placeholder {
+.placeholder-dove::-moz-placeholder {
   color: #6f6f6c;
 }
 
-.placeholder-dove-gray:-ms-input-placeholder {
+.placeholder-dove:-ms-input-placeholder {
   color: #6f6f6c;
 }
 
-.placeholder-dove-gray::-ms-input-placeholder {
+.placeholder-dove::-ms-input-placeholder {
   color: #6f6f6c;
 }
 
-.placeholder-dove-gray::placeholder {
+.placeholder-dove::placeholder {
   color: #6f6f6c;
 }
 
@@ -9808,63 +9936,83 @@ video {
   color: #47c386;
 }
 
-.focus\:placeholder-astro-blue:focus::-webkit-input-placeholder {
+.focus\:placeholder-mint-fade:focus::-webkit-input-placeholder {
+  color: #99dbbb;
+}
+
+.focus\:placeholder-mint-fade:focus::-moz-placeholder {
+  color: #99dbbb;
+}
+
+.focus\:placeholder-mint-fade:focus:-ms-input-placeholder {
+  color: #99dbbb;
+}
+
+.focus\:placeholder-mint-fade:focus::-ms-input-placeholder {
+  color: #99dbbb;
+}
+
+.focus\:placeholder-mint-fade:focus::placeholder {
+  color: #99dbbb;
+}
+
+.focus\:placeholder-astro:focus::-webkit-input-placeholder {
   color: #1b465b;
 }
 
-.focus\:placeholder-astro-blue:focus::-moz-placeholder {
+.focus\:placeholder-astro:focus::-moz-placeholder {
   color: #1b465b;
 }
 
-.focus\:placeholder-astro-blue:focus:-ms-input-placeholder {
+.focus\:placeholder-astro:focus:-ms-input-placeholder {
   color: #1b465b;
 }
 
-.focus\:placeholder-astro-blue:focus::-ms-input-placeholder {
+.focus\:placeholder-astro:focus::-ms-input-placeholder {
   color: #1b465b;
 }
 
-.focus\:placeholder-astro-blue:focus::placeholder {
+.focus\:placeholder-astro:focus::placeholder {
   color: #1b465b;
 }
 
-.focus\:placeholder-summary-sky:focus::-webkit-input-placeholder {
+.focus\:placeholder-sky:focus::-webkit-input-placeholder {
   color: #36b2db;
 }
 
-.focus\:placeholder-summary-sky:focus::-moz-placeholder {
+.focus\:placeholder-sky:focus::-moz-placeholder {
   color: #36b2db;
 }
 
-.focus\:placeholder-summary-sky:focus:-ms-input-placeholder {
+.focus\:placeholder-sky:focus:-ms-input-placeholder {
   color: #36b2db;
 }
 
-.focus\:placeholder-summary-sky:focus::-ms-input-placeholder {
+.focus\:placeholder-sky:focus::-ms-input-placeholder {
   color: #36b2db;
 }
 
-.focus\:placeholder-summary-sky:focus::placeholder {
+.focus\:placeholder-sky:focus::placeholder {
   color: #36b2db;
 }
 
-.focus\:placeholder-dove-gray:focus::-webkit-input-placeholder {
+.focus\:placeholder-dove:focus::-webkit-input-placeholder {
   color: #6f6f6c;
 }
 
-.focus\:placeholder-dove-gray:focus::-moz-placeholder {
+.focus\:placeholder-dove:focus::-moz-placeholder {
   color: #6f6f6c;
 }
 
-.focus\:placeholder-dove-gray:focus:-ms-input-placeholder {
+.focus\:placeholder-dove:focus:-ms-input-placeholder {
   color: #6f6f6c;
 }
 
-.focus\:placeholder-dove-gray:focus::-ms-input-placeholder {
+.focus\:placeholder-dove:focus::-ms-input-placeholder {
   color: #6f6f6c;
 }
 
-.focus\:placeholder-dove-gray:focus::placeholder {
+.focus\:placeholder-dove:focus::placeholder {
   color: #6f6f6c;
 }
 
@@ -10483,15 +10631,19 @@ video {
   color: #47c386;
 }
 
-.text-astro-blue {
+.text-mint-fade {
+  color: #99dbbb;
+}
+
+.text-astro {
   color: #1b465b;
 }
 
-.text-summary-sky {
+.text-sky {
   color: #36b2db;
 }
 
-.text-dove-gray {
+.text-dove {
   color: #6f6f6c;
 }
 
@@ -10871,15 +11023,19 @@ video {
   color: #47c386;
 }
 
-.hover\:text-astro-blue:hover {
+.hover\:text-mint-fade:hover {
+  color: #99dbbb;
+}
+
+.hover\:text-astro:hover {
   color: #1b465b;
 }
 
-.hover\:text-summary-sky:hover {
+.hover\:text-sky:hover {
   color: #36b2db;
 }
 
-.hover\:text-dove-gray:hover {
+.hover\:text-dove:hover {
   color: #6f6f6c;
 }
 
@@ -11259,15 +11415,19 @@ video {
   color: #47c386;
 }
 
-.focus\:text-astro-blue:focus {
+.focus\:text-mint-fade:focus {
+  color: #99dbbb;
+}
+
+.focus\:text-astro:focus {
   color: #1b465b;
 }
 
-.focus\:text-summary-sky:focus {
+.focus\:text-sky:focus {
   color: #36b2db;
 }
 
-.focus\:text-dove-gray:focus {
+.focus\:text-dove:focus {
   color: #6f6f6c;
 }
 
@@ -12165,15 +12325,19 @@ video {
     background-color: #47c386;
   }
 
-  .sm\:bg-astro-blue {
+  .sm\:bg-mint-fade {
+    background-color: #99dbbb;
+  }
+
+  .sm\:bg-astro {
     background-color: #1b465b;
   }
 
-  .sm\:bg-summary-sky {
+  .sm\:bg-sky {
     background-color: #36b2db;
   }
 
-  .sm\:bg-dove-gray {
+  .sm\:bg-dove {
     background-color: #6f6f6c;
   }
 
@@ -12553,15 +12717,19 @@ video {
     background-color: #47c386;
   }
 
-  .sm\:hover\:bg-astro-blue:hover {
+  .sm\:hover\:bg-mint-fade:hover {
+    background-color: #99dbbb;
+  }
+
+  .sm\:hover\:bg-astro:hover {
     background-color: #1b465b;
   }
 
-  .sm\:hover\:bg-summary-sky:hover {
+  .sm\:hover\:bg-sky:hover {
     background-color: #36b2db;
   }
 
-  .sm\:hover\:bg-dove-gray:hover {
+  .sm\:hover\:bg-dove:hover {
     background-color: #6f6f6c;
   }
 
@@ -12941,15 +13109,19 @@ video {
     background-color: #47c386;
   }
 
-  .sm\:focus\:bg-astro-blue:focus {
+  .sm\:focus\:bg-mint-fade:focus {
+    background-color: #99dbbb;
+  }
+
+  .sm\:focus\:bg-astro:focus {
     background-color: #1b465b;
   }
 
-  .sm\:focus\:bg-summary-sky:focus {
+  .sm\:focus\:bg-sky:focus {
     background-color: #36b2db;
   }
 
-  .sm\:focus\:bg-dove-gray:focus {
+  .sm\:focus\:bg-dove:focus {
     background-color: #6f6f6c;
   }
 
@@ -13409,15 +13581,19 @@ video {
     border-color: #47c386;
   }
 
-  .sm\:border-astro-blue {
+  .sm\:border-mint-fade {
+    border-color: #99dbbb;
+  }
+
+  .sm\:border-astro {
     border-color: #1b465b;
   }
 
-  .sm\:border-summary-sky {
+  .sm\:border-sky {
     border-color: #36b2db;
   }
 
-  .sm\:border-dove-gray {
+  .sm\:border-dove {
     border-color: #6f6f6c;
   }
 
@@ -13797,15 +13973,19 @@ video {
     border-color: #47c386;
   }
 
-  .sm\:hover\:border-astro-blue:hover {
+  .sm\:hover\:border-mint-fade:hover {
+    border-color: #99dbbb;
+  }
+
+  .sm\:hover\:border-astro:hover {
     border-color: #1b465b;
   }
 
-  .sm\:hover\:border-summary-sky:hover {
+  .sm\:hover\:border-sky:hover {
     border-color: #36b2db;
   }
 
-  .sm\:hover\:border-dove-gray:hover {
+  .sm\:hover\:border-dove:hover {
     border-color: #6f6f6c;
   }
 
@@ -14185,15 +14365,19 @@ video {
     border-color: #47c386;
   }
 
-  .sm\:focus\:border-astro-blue:focus {
+  .sm\:focus\:border-mint-fade:focus {
+    border-color: #99dbbb;
+  }
+
+  .sm\:focus\:border-astro:focus {
     border-color: #1b465b;
   }
 
-  .sm\:focus\:border-summary-sky:focus {
+  .sm\:focus\:border-sky:focus {
     border-color: #36b2db;
   }
 
-  .sm\:focus\:border-dove-gray:focus {
+  .sm\:focus\:border-dove:focus {
     border-color: #6f6f6c;
   }
 
@@ -18947,63 +19131,83 @@ video {
     color: #47c386;
   }
 
-  .sm\:placeholder-astro-blue::-webkit-input-placeholder {
+  .sm\:placeholder-mint-fade::-webkit-input-placeholder {
+    color: #99dbbb;
+  }
+
+  .sm\:placeholder-mint-fade::-moz-placeholder {
+    color: #99dbbb;
+  }
+
+  .sm\:placeholder-mint-fade:-ms-input-placeholder {
+    color: #99dbbb;
+  }
+
+  .sm\:placeholder-mint-fade::-ms-input-placeholder {
+    color: #99dbbb;
+  }
+
+  .sm\:placeholder-mint-fade::placeholder {
+    color: #99dbbb;
+  }
+
+  .sm\:placeholder-astro::-webkit-input-placeholder {
     color: #1b465b;
   }
 
-  .sm\:placeholder-astro-blue::-moz-placeholder {
+  .sm\:placeholder-astro::-moz-placeholder {
     color: #1b465b;
   }
 
-  .sm\:placeholder-astro-blue:-ms-input-placeholder {
+  .sm\:placeholder-astro:-ms-input-placeholder {
     color: #1b465b;
   }
 
-  .sm\:placeholder-astro-blue::-ms-input-placeholder {
+  .sm\:placeholder-astro::-ms-input-placeholder {
     color: #1b465b;
   }
 
-  .sm\:placeholder-astro-blue::placeholder {
+  .sm\:placeholder-astro::placeholder {
     color: #1b465b;
   }
 
-  .sm\:placeholder-summary-sky::-webkit-input-placeholder {
+  .sm\:placeholder-sky::-webkit-input-placeholder {
     color: #36b2db;
   }
 
-  .sm\:placeholder-summary-sky::-moz-placeholder {
+  .sm\:placeholder-sky::-moz-placeholder {
     color: #36b2db;
   }
 
-  .sm\:placeholder-summary-sky:-ms-input-placeholder {
+  .sm\:placeholder-sky:-ms-input-placeholder {
     color: #36b2db;
   }
 
-  .sm\:placeholder-summary-sky::-ms-input-placeholder {
+  .sm\:placeholder-sky::-ms-input-placeholder {
     color: #36b2db;
   }
 
-  .sm\:placeholder-summary-sky::placeholder {
+  .sm\:placeholder-sky::placeholder {
     color: #36b2db;
   }
 
-  .sm\:placeholder-dove-gray::-webkit-input-placeholder {
+  .sm\:placeholder-dove::-webkit-input-placeholder {
     color: #6f6f6c;
   }
 
-  .sm\:placeholder-dove-gray::-moz-placeholder {
+  .sm\:placeholder-dove::-moz-placeholder {
     color: #6f6f6c;
   }
 
-  .sm\:placeholder-dove-gray:-ms-input-placeholder {
+  .sm\:placeholder-dove:-ms-input-placeholder {
     color: #6f6f6c;
   }
 
-  .sm\:placeholder-dove-gray::-ms-input-placeholder {
+  .sm\:placeholder-dove::-ms-input-placeholder {
     color: #6f6f6c;
   }
 
-  .sm\:placeholder-dove-gray::placeholder {
+  .sm\:placeholder-dove::placeholder {
     color: #6f6f6c;
   }
 
@@ -20887,63 +21091,83 @@ video {
     color: #47c386;
   }
 
-  .sm\:focus\:placeholder-astro-blue:focus::-webkit-input-placeholder {
+  .sm\:focus\:placeholder-mint-fade:focus::-webkit-input-placeholder {
+    color: #99dbbb;
+  }
+
+  .sm\:focus\:placeholder-mint-fade:focus::-moz-placeholder {
+    color: #99dbbb;
+  }
+
+  .sm\:focus\:placeholder-mint-fade:focus:-ms-input-placeholder {
+    color: #99dbbb;
+  }
+
+  .sm\:focus\:placeholder-mint-fade:focus::-ms-input-placeholder {
+    color: #99dbbb;
+  }
+
+  .sm\:focus\:placeholder-mint-fade:focus::placeholder {
+    color: #99dbbb;
+  }
+
+  .sm\:focus\:placeholder-astro:focus::-webkit-input-placeholder {
     color: #1b465b;
   }
 
-  .sm\:focus\:placeholder-astro-blue:focus::-moz-placeholder {
+  .sm\:focus\:placeholder-astro:focus::-moz-placeholder {
     color: #1b465b;
   }
 
-  .sm\:focus\:placeholder-astro-blue:focus:-ms-input-placeholder {
+  .sm\:focus\:placeholder-astro:focus:-ms-input-placeholder {
     color: #1b465b;
   }
 
-  .sm\:focus\:placeholder-astro-blue:focus::-ms-input-placeholder {
+  .sm\:focus\:placeholder-astro:focus::-ms-input-placeholder {
     color: #1b465b;
   }
 
-  .sm\:focus\:placeholder-astro-blue:focus::placeholder {
+  .sm\:focus\:placeholder-astro:focus::placeholder {
     color: #1b465b;
   }
 
-  .sm\:focus\:placeholder-summary-sky:focus::-webkit-input-placeholder {
+  .sm\:focus\:placeholder-sky:focus::-webkit-input-placeholder {
     color: #36b2db;
   }
 
-  .sm\:focus\:placeholder-summary-sky:focus::-moz-placeholder {
+  .sm\:focus\:placeholder-sky:focus::-moz-placeholder {
     color: #36b2db;
   }
 
-  .sm\:focus\:placeholder-summary-sky:focus:-ms-input-placeholder {
+  .sm\:focus\:placeholder-sky:focus:-ms-input-placeholder {
     color: #36b2db;
   }
 
-  .sm\:focus\:placeholder-summary-sky:focus::-ms-input-placeholder {
+  .sm\:focus\:placeholder-sky:focus::-ms-input-placeholder {
     color: #36b2db;
   }
 
-  .sm\:focus\:placeholder-summary-sky:focus::placeholder {
+  .sm\:focus\:placeholder-sky:focus::placeholder {
     color: #36b2db;
   }
 
-  .sm\:focus\:placeholder-dove-gray:focus::-webkit-input-placeholder {
+  .sm\:focus\:placeholder-dove:focus::-webkit-input-placeholder {
     color: #6f6f6c;
   }
 
-  .sm\:focus\:placeholder-dove-gray:focus::-moz-placeholder {
+  .sm\:focus\:placeholder-dove:focus::-moz-placeholder {
     color: #6f6f6c;
   }
 
-  .sm\:focus\:placeholder-dove-gray:focus:-ms-input-placeholder {
+  .sm\:focus\:placeholder-dove:focus:-ms-input-placeholder {
     color: #6f6f6c;
   }
 
-  .sm\:focus\:placeholder-dove-gray:focus::-ms-input-placeholder {
+  .sm\:focus\:placeholder-dove:focus::-ms-input-placeholder {
     color: #6f6f6c;
   }
 
-  .sm\:focus\:placeholder-dove-gray:focus::placeholder {
+  .sm\:focus\:placeholder-dove:focus::placeholder {
     color: #6f6f6c;
   }
 
@@ -21562,15 +21786,19 @@ video {
     color: #47c386;
   }
 
-  .sm\:text-astro-blue {
+  .sm\:text-mint-fade {
+    color: #99dbbb;
+  }
+
+  .sm\:text-astro {
     color: #1b465b;
   }
 
-  .sm\:text-summary-sky {
+  .sm\:text-sky {
     color: #36b2db;
   }
 
-  .sm\:text-dove-gray {
+  .sm\:text-dove {
     color: #6f6f6c;
   }
 
@@ -21950,15 +22178,19 @@ video {
     color: #47c386;
   }
 
-  .sm\:hover\:text-astro-blue:hover {
+  .sm\:hover\:text-mint-fade:hover {
+    color: #99dbbb;
+  }
+
+  .sm\:hover\:text-astro:hover {
     color: #1b465b;
   }
 
-  .sm\:hover\:text-summary-sky:hover {
+  .sm\:hover\:text-sky:hover {
     color: #36b2db;
   }
 
-  .sm\:hover\:text-dove-gray:hover {
+  .sm\:hover\:text-dove:hover {
     color: #6f6f6c;
   }
 
@@ -22338,15 +22570,19 @@ video {
     color: #47c386;
   }
 
-  .sm\:focus\:text-astro-blue:focus {
+  .sm\:focus\:text-mint-fade:focus {
+    color: #99dbbb;
+  }
+
+  .sm\:focus\:text-astro:focus {
     color: #1b465b;
   }
 
-  .sm\:focus\:text-summary-sky:focus {
+  .sm\:focus\:text-sky:focus {
     color: #36b2db;
   }
 
-  .sm\:focus\:text-dove-gray:focus {
+  .sm\:focus\:text-dove:focus {
     color: #6f6f6c;
   }
 
@@ -23245,15 +23481,19 @@ video {
     background-color: #47c386;
   }
 
-  .md\:bg-astro-blue {
+  .md\:bg-mint-fade {
+    background-color: #99dbbb;
+  }
+
+  .md\:bg-astro {
     background-color: #1b465b;
   }
 
-  .md\:bg-summary-sky {
+  .md\:bg-sky {
     background-color: #36b2db;
   }
 
-  .md\:bg-dove-gray {
+  .md\:bg-dove {
     background-color: #6f6f6c;
   }
 
@@ -23633,15 +23873,19 @@ video {
     background-color: #47c386;
   }
 
-  .md\:hover\:bg-astro-blue:hover {
+  .md\:hover\:bg-mint-fade:hover {
+    background-color: #99dbbb;
+  }
+
+  .md\:hover\:bg-astro:hover {
     background-color: #1b465b;
   }
 
-  .md\:hover\:bg-summary-sky:hover {
+  .md\:hover\:bg-sky:hover {
     background-color: #36b2db;
   }
 
-  .md\:hover\:bg-dove-gray:hover {
+  .md\:hover\:bg-dove:hover {
     background-color: #6f6f6c;
   }
 
@@ -24021,15 +24265,19 @@ video {
     background-color: #47c386;
   }
 
-  .md\:focus\:bg-astro-blue:focus {
+  .md\:focus\:bg-mint-fade:focus {
+    background-color: #99dbbb;
+  }
+
+  .md\:focus\:bg-astro:focus {
     background-color: #1b465b;
   }
 
-  .md\:focus\:bg-summary-sky:focus {
+  .md\:focus\:bg-sky:focus {
     background-color: #36b2db;
   }
 
-  .md\:focus\:bg-dove-gray:focus {
+  .md\:focus\:bg-dove:focus {
     background-color: #6f6f6c;
   }
 
@@ -24489,15 +24737,19 @@ video {
     border-color: #47c386;
   }
 
-  .md\:border-astro-blue {
+  .md\:border-mint-fade {
+    border-color: #99dbbb;
+  }
+
+  .md\:border-astro {
     border-color: #1b465b;
   }
 
-  .md\:border-summary-sky {
+  .md\:border-sky {
     border-color: #36b2db;
   }
 
-  .md\:border-dove-gray {
+  .md\:border-dove {
     border-color: #6f6f6c;
   }
 
@@ -24877,15 +25129,19 @@ video {
     border-color: #47c386;
   }
 
-  .md\:hover\:border-astro-blue:hover {
+  .md\:hover\:border-mint-fade:hover {
+    border-color: #99dbbb;
+  }
+
+  .md\:hover\:border-astro:hover {
     border-color: #1b465b;
   }
 
-  .md\:hover\:border-summary-sky:hover {
+  .md\:hover\:border-sky:hover {
     border-color: #36b2db;
   }
 
-  .md\:hover\:border-dove-gray:hover {
+  .md\:hover\:border-dove:hover {
     border-color: #6f6f6c;
   }
 
@@ -25265,15 +25521,19 @@ video {
     border-color: #47c386;
   }
 
-  .md\:focus\:border-astro-blue:focus {
+  .md\:focus\:border-mint-fade:focus {
+    border-color: #99dbbb;
+  }
+
+  .md\:focus\:border-astro:focus {
     border-color: #1b465b;
   }
 
-  .md\:focus\:border-summary-sky:focus {
+  .md\:focus\:border-sky:focus {
     border-color: #36b2db;
   }
 
-  .md\:focus\:border-dove-gray:focus {
+  .md\:focus\:border-dove:focus {
     border-color: #6f6f6c;
   }
 
@@ -30027,63 +30287,83 @@ video {
     color: #47c386;
   }
 
-  .md\:placeholder-astro-blue::-webkit-input-placeholder {
+  .md\:placeholder-mint-fade::-webkit-input-placeholder {
+    color: #99dbbb;
+  }
+
+  .md\:placeholder-mint-fade::-moz-placeholder {
+    color: #99dbbb;
+  }
+
+  .md\:placeholder-mint-fade:-ms-input-placeholder {
+    color: #99dbbb;
+  }
+
+  .md\:placeholder-mint-fade::-ms-input-placeholder {
+    color: #99dbbb;
+  }
+
+  .md\:placeholder-mint-fade::placeholder {
+    color: #99dbbb;
+  }
+
+  .md\:placeholder-astro::-webkit-input-placeholder {
     color: #1b465b;
   }
 
-  .md\:placeholder-astro-blue::-moz-placeholder {
+  .md\:placeholder-astro::-moz-placeholder {
     color: #1b465b;
   }
 
-  .md\:placeholder-astro-blue:-ms-input-placeholder {
+  .md\:placeholder-astro:-ms-input-placeholder {
     color: #1b465b;
   }
 
-  .md\:placeholder-astro-blue::-ms-input-placeholder {
+  .md\:placeholder-astro::-ms-input-placeholder {
     color: #1b465b;
   }
 
-  .md\:placeholder-astro-blue::placeholder {
+  .md\:placeholder-astro::placeholder {
     color: #1b465b;
   }
 
-  .md\:placeholder-summary-sky::-webkit-input-placeholder {
+  .md\:placeholder-sky::-webkit-input-placeholder {
     color: #36b2db;
   }
 
-  .md\:placeholder-summary-sky::-moz-placeholder {
+  .md\:placeholder-sky::-moz-placeholder {
     color: #36b2db;
   }
 
-  .md\:placeholder-summary-sky:-ms-input-placeholder {
+  .md\:placeholder-sky:-ms-input-placeholder {
     color: #36b2db;
   }
 
-  .md\:placeholder-summary-sky::-ms-input-placeholder {
+  .md\:placeholder-sky::-ms-input-placeholder {
     color: #36b2db;
   }
 
-  .md\:placeholder-summary-sky::placeholder {
+  .md\:placeholder-sky::placeholder {
     color: #36b2db;
   }
 
-  .md\:placeholder-dove-gray::-webkit-input-placeholder {
+  .md\:placeholder-dove::-webkit-input-placeholder {
     color: #6f6f6c;
   }
 
-  .md\:placeholder-dove-gray::-moz-placeholder {
+  .md\:placeholder-dove::-moz-placeholder {
     color: #6f6f6c;
   }
 
-  .md\:placeholder-dove-gray:-ms-input-placeholder {
+  .md\:placeholder-dove:-ms-input-placeholder {
     color: #6f6f6c;
   }
 
-  .md\:placeholder-dove-gray::-ms-input-placeholder {
+  .md\:placeholder-dove::-ms-input-placeholder {
     color: #6f6f6c;
   }
 
-  .md\:placeholder-dove-gray::placeholder {
+  .md\:placeholder-dove::placeholder {
     color: #6f6f6c;
   }
 
@@ -31967,63 +32247,83 @@ video {
     color: #47c386;
   }
 
-  .md\:focus\:placeholder-astro-blue:focus::-webkit-input-placeholder {
+  .md\:focus\:placeholder-mint-fade:focus::-webkit-input-placeholder {
+    color: #99dbbb;
+  }
+
+  .md\:focus\:placeholder-mint-fade:focus::-moz-placeholder {
+    color: #99dbbb;
+  }
+
+  .md\:focus\:placeholder-mint-fade:focus:-ms-input-placeholder {
+    color: #99dbbb;
+  }
+
+  .md\:focus\:placeholder-mint-fade:focus::-ms-input-placeholder {
+    color: #99dbbb;
+  }
+
+  .md\:focus\:placeholder-mint-fade:focus::placeholder {
+    color: #99dbbb;
+  }
+
+  .md\:focus\:placeholder-astro:focus::-webkit-input-placeholder {
     color: #1b465b;
   }
 
-  .md\:focus\:placeholder-astro-blue:focus::-moz-placeholder {
+  .md\:focus\:placeholder-astro:focus::-moz-placeholder {
     color: #1b465b;
   }
 
-  .md\:focus\:placeholder-astro-blue:focus:-ms-input-placeholder {
+  .md\:focus\:placeholder-astro:focus:-ms-input-placeholder {
     color: #1b465b;
   }
 
-  .md\:focus\:placeholder-astro-blue:focus::-ms-input-placeholder {
+  .md\:focus\:placeholder-astro:focus::-ms-input-placeholder {
     color: #1b465b;
   }
 
-  .md\:focus\:placeholder-astro-blue:focus::placeholder {
+  .md\:focus\:placeholder-astro:focus::placeholder {
     color: #1b465b;
   }
 
-  .md\:focus\:placeholder-summary-sky:focus::-webkit-input-placeholder {
+  .md\:focus\:placeholder-sky:focus::-webkit-input-placeholder {
     color: #36b2db;
   }
 
-  .md\:focus\:placeholder-summary-sky:focus::-moz-placeholder {
+  .md\:focus\:placeholder-sky:focus::-moz-placeholder {
     color: #36b2db;
   }
 
-  .md\:focus\:placeholder-summary-sky:focus:-ms-input-placeholder {
+  .md\:focus\:placeholder-sky:focus:-ms-input-placeholder {
     color: #36b2db;
   }
 
-  .md\:focus\:placeholder-summary-sky:focus::-ms-input-placeholder {
+  .md\:focus\:placeholder-sky:focus::-ms-input-placeholder {
     color: #36b2db;
   }
 
-  .md\:focus\:placeholder-summary-sky:focus::placeholder {
+  .md\:focus\:placeholder-sky:focus::placeholder {
     color: #36b2db;
   }
 
-  .md\:focus\:placeholder-dove-gray:focus::-webkit-input-placeholder {
+  .md\:focus\:placeholder-dove:focus::-webkit-input-placeholder {
     color: #6f6f6c;
   }
 
-  .md\:focus\:placeholder-dove-gray:focus::-moz-placeholder {
+  .md\:focus\:placeholder-dove:focus::-moz-placeholder {
     color: #6f6f6c;
   }
 
-  .md\:focus\:placeholder-dove-gray:focus:-ms-input-placeholder {
+  .md\:focus\:placeholder-dove:focus:-ms-input-placeholder {
     color: #6f6f6c;
   }
 
-  .md\:focus\:placeholder-dove-gray:focus::-ms-input-placeholder {
+  .md\:focus\:placeholder-dove:focus::-ms-input-placeholder {
     color: #6f6f6c;
   }
 
-  .md\:focus\:placeholder-dove-gray:focus::placeholder {
+  .md\:focus\:placeholder-dove:focus::placeholder {
     color: #6f6f6c;
   }
 
@@ -32642,15 +32942,19 @@ video {
     color: #47c386;
   }
 
-  .md\:text-astro-blue {
+  .md\:text-mint-fade {
+    color: #99dbbb;
+  }
+
+  .md\:text-astro {
     color: #1b465b;
   }
 
-  .md\:text-summary-sky {
+  .md\:text-sky {
     color: #36b2db;
   }
 
-  .md\:text-dove-gray {
+  .md\:text-dove {
     color: #6f6f6c;
   }
 
@@ -33030,15 +33334,19 @@ video {
     color: #47c386;
   }
 
-  .md\:hover\:text-astro-blue:hover {
+  .md\:hover\:text-mint-fade:hover {
+    color: #99dbbb;
+  }
+
+  .md\:hover\:text-astro:hover {
     color: #1b465b;
   }
 
-  .md\:hover\:text-summary-sky:hover {
+  .md\:hover\:text-sky:hover {
     color: #36b2db;
   }
 
-  .md\:hover\:text-dove-gray:hover {
+  .md\:hover\:text-dove:hover {
     color: #6f6f6c;
   }
 
@@ -33418,15 +33726,19 @@ video {
     color: #47c386;
   }
 
-  .md\:focus\:text-astro-blue:focus {
+  .md\:focus\:text-mint-fade:focus {
+    color: #99dbbb;
+  }
+
+  .md\:focus\:text-astro:focus {
     color: #1b465b;
   }
 
-  .md\:focus\:text-summary-sky:focus {
+  .md\:focus\:text-sky:focus {
     color: #36b2db;
   }
 
-  .md\:focus\:text-dove-gray:focus {
+  .md\:focus\:text-dove:focus {
     color: #6f6f6c;
   }
 
@@ -34325,15 +34637,19 @@ video {
     background-color: #47c386;
   }
 
-  .lg\:bg-astro-blue {
+  .lg\:bg-mint-fade {
+    background-color: #99dbbb;
+  }
+
+  .lg\:bg-astro {
     background-color: #1b465b;
   }
 
-  .lg\:bg-summary-sky {
+  .lg\:bg-sky {
     background-color: #36b2db;
   }
 
-  .lg\:bg-dove-gray {
+  .lg\:bg-dove {
     background-color: #6f6f6c;
   }
 
@@ -34713,15 +35029,19 @@ video {
     background-color: #47c386;
   }
 
-  .lg\:hover\:bg-astro-blue:hover {
+  .lg\:hover\:bg-mint-fade:hover {
+    background-color: #99dbbb;
+  }
+
+  .lg\:hover\:bg-astro:hover {
     background-color: #1b465b;
   }
 
-  .lg\:hover\:bg-summary-sky:hover {
+  .lg\:hover\:bg-sky:hover {
     background-color: #36b2db;
   }
 
-  .lg\:hover\:bg-dove-gray:hover {
+  .lg\:hover\:bg-dove:hover {
     background-color: #6f6f6c;
   }
 
@@ -35101,15 +35421,19 @@ video {
     background-color: #47c386;
   }
 
-  .lg\:focus\:bg-astro-blue:focus {
+  .lg\:focus\:bg-mint-fade:focus {
+    background-color: #99dbbb;
+  }
+
+  .lg\:focus\:bg-astro:focus {
     background-color: #1b465b;
   }
 
-  .lg\:focus\:bg-summary-sky:focus {
+  .lg\:focus\:bg-sky:focus {
     background-color: #36b2db;
   }
 
-  .lg\:focus\:bg-dove-gray:focus {
+  .lg\:focus\:bg-dove:focus {
     background-color: #6f6f6c;
   }
 
@@ -35569,15 +35893,19 @@ video {
     border-color: #47c386;
   }
 
-  .lg\:border-astro-blue {
+  .lg\:border-mint-fade {
+    border-color: #99dbbb;
+  }
+
+  .lg\:border-astro {
     border-color: #1b465b;
   }
 
-  .lg\:border-summary-sky {
+  .lg\:border-sky {
     border-color: #36b2db;
   }
 
-  .lg\:border-dove-gray {
+  .lg\:border-dove {
     border-color: #6f6f6c;
   }
 
@@ -35957,15 +36285,19 @@ video {
     border-color: #47c386;
   }
 
-  .lg\:hover\:border-astro-blue:hover {
+  .lg\:hover\:border-mint-fade:hover {
+    border-color: #99dbbb;
+  }
+
+  .lg\:hover\:border-astro:hover {
     border-color: #1b465b;
   }
 
-  .lg\:hover\:border-summary-sky:hover {
+  .lg\:hover\:border-sky:hover {
     border-color: #36b2db;
   }
 
-  .lg\:hover\:border-dove-gray:hover {
+  .lg\:hover\:border-dove:hover {
     border-color: #6f6f6c;
   }
 
@@ -36345,15 +36677,19 @@ video {
     border-color: #47c386;
   }
 
-  .lg\:focus\:border-astro-blue:focus {
+  .lg\:focus\:border-mint-fade:focus {
+    border-color: #99dbbb;
+  }
+
+  .lg\:focus\:border-astro:focus {
     border-color: #1b465b;
   }
 
-  .lg\:focus\:border-summary-sky:focus {
+  .lg\:focus\:border-sky:focus {
     border-color: #36b2db;
   }
 
-  .lg\:focus\:border-dove-gray:focus {
+  .lg\:focus\:border-dove:focus {
     border-color: #6f6f6c;
   }
 
@@ -41107,63 +41443,83 @@ video {
     color: #47c386;
   }
 
-  .lg\:placeholder-astro-blue::-webkit-input-placeholder {
+  .lg\:placeholder-mint-fade::-webkit-input-placeholder {
+    color: #99dbbb;
+  }
+
+  .lg\:placeholder-mint-fade::-moz-placeholder {
+    color: #99dbbb;
+  }
+
+  .lg\:placeholder-mint-fade:-ms-input-placeholder {
+    color: #99dbbb;
+  }
+
+  .lg\:placeholder-mint-fade::-ms-input-placeholder {
+    color: #99dbbb;
+  }
+
+  .lg\:placeholder-mint-fade::placeholder {
+    color: #99dbbb;
+  }
+
+  .lg\:placeholder-astro::-webkit-input-placeholder {
     color: #1b465b;
   }
 
-  .lg\:placeholder-astro-blue::-moz-placeholder {
+  .lg\:placeholder-astro::-moz-placeholder {
     color: #1b465b;
   }
 
-  .lg\:placeholder-astro-blue:-ms-input-placeholder {
+  .lg\:placeholder-astro:-ms-input-placeholder {
     color: #1b465b;
   }
 
-  .lg\:placeholder-astro-blue::-ms-input-placeholder {
+  .lg\:placeholder-astro::-ms-input-placeholder {
     color: #1b465b;
   }
 
-  .lg\:placeholder-astro-blue::placeholder {
+  .lg\:placeholder-astro::placeholder {
     color: #1b465b;
   }
 
-  .lg\:placeholder-summary-sky::-webkit-input-placeholder {
+  .lg\:placeholder-sky::-webkit-input-placeholder {
     color: #36b2db;
   }
 
-  .lg\:placeholder-summary-sky::-moz-placeholder {
+  .lg\:placeholder-sky::-moz-placeholder {
     color: #36b2db;
   }
 
-  .lg\:placeholder-summary-sky:-ms-input-placeholder {
+  .lg\:placeholder-sky:-ms-input-placeholder {
     color: #36b2db;
   }
 
-  .lg\:placeholder-summary-sky::-ms-input-placeholder {
+  .lg\:placeholder-sky::-ms-input-placeholder {
     color: #36b2db;
   }
 
-  .lg\:placeholder-summary-sky::placeholder {
+  .lg\:placeholder-sky::placeholder {
     color: #36b2db;
   }
 
-  .lg\:placeholder-dove-gray::-webkit-input-placeholder {
+  .lg\:placeholder-dove::-webkit-input-placeholder {
     color: #6f6f6c;
   }
 
-  .lg\:placeholder-dove-gray::-moz-placeholder {
+  .lg\:placeholder-dove::-moz-placeholder {
     color: #6f6f6c;
   }
 
-  .lg\:placeholder-dove-gray:-ms-input-placeholder {
+  .lg\:placeholder-dove:-ms-input-placeholder {
     color: #6f6f6c;
   }
 
-  .lg\:placeholder-dove-gray::-ms-input-placeholder {
+  .lg\:placeholder-dove::-ms-input-placeholder {
     color: #6f6f6c;
   }
 
-  .lg\:placeholder-dove-gray::placeholder {
+  .lg\:placeholder-dove::placeholder {
     color: #6f6f6c;
   }
 
@@ -43047,63 +43403,83 @@ video {
     color: #47c386;
   }
 
-  .lg\:focus\:placeholder-astro-blue:focus::-webkit-input-placeholder {
+  .lg\:focus\:placeholder-mint-fade:focus::-webkit-input-placeholder {
+    color: #99dbbb;
+  }
+
+  .lg\:focus\:placeholder-mint-fade:focus::-moz-placeholder {
+    color: #99dbbb;
+  }
+
+  .lg\:focus\:placeholder-mint-fade:focus:-ms-input-placeholder {
+    color: #99dbbb;
+  }
+
+  .lg\:focus\:placeholder-mint-fade:focus::-ms-input-placeholder {
+    color: #99dbbb;
+  }
+
+  .lg\:focus\:placeholder-mint-fade:focus::placeholder {
+    color: #99dbbb;
+  }
+
+  .lg\:focus\:placeholder-astro:focus::-webkit-input-placeholder {
     color: #1b465b;
   }
 
-  .lg\:focus\:placeholder-astro-blue:focus::-moz-placeholder {
+  .lg\:focus\:placeholder-astro:focus::-moz-placeholder {
     color: #1b465b;
   }
 
-  .lg\:focus\:placeholder-astro-blue:focus:-ms-input-placeholder {
+  .lg\:focus\:placeholder-astro:focus:-ms-input-placeholder {
     color: #1b465b;
   }
 
-  .lg\:focus\:placeholder-astro-blue:focus::-ms-input-placeholder {
+  .lg\:focus\:placeholder-astro:focus::-ms-input-placeholder {
     color: #1b465b;
   }
 
-  .lg\:focus\:placeholder-astro-blue:focus::placeholder {
+  .lg\:focus\:placeholder-astro:focus::placeholder {
     color: #1b465b;
   }
 
-  .lg\:focus\:placeholder-summary-sky:focus::-webkit-input-placeholder {
+  .lg\:focus\:placeholder-sky:focus::-webkit-input-placeholder {
     color: #36b2db;
   }
 
-  .lg\:focus\:placeholder-summary-sky:focus::-moz-placeholder {
+  .lg\:focus\:placeholder-sky:focus::-moz-placeholder {
     color: #36b2db;
   }
 
-  .lg\:focus\:placeholder-summary-sky:focus:-ms-input-placeholder {
+  .lg\:focus\:placeholder-sky:focus:-ms-input-placeholder {
     color: #36b2db;
   }
 
-  .lg\:focus\:placeholder-summary-sky:focus::-ms-input-placeholder {
+  .lg\:focus\:placeholder-sky:focus::-ms-input-placeholder {
     color: #36b2db;
   }
 
-  .lg\:focus\:placeholder-summary-sky:focus::placeholder {
+  .lg\:focus\:placeholder-sky:focus::placeholder {
     color: #36b2db;
   }
 
-  .lg\:focus\:placeholder-dove-gray:focus::-webkit-input-placeholder {
+  .lg\:focus\:placeholder-dove:focus::-webkit-input-placeholder {
     color: #6f6f6c;
   }
 
-  .lg\:focus\:placeholder-dove-gray:focus::-moz-placeholder {
+  .lg\:focus\:placeholder-dove:focus::-moz-placeholder {
     color: #6f6f6c;
   }
 
-  .lg\:focus\:placeholder-dove-gray:focus:-ms-input-placeholder {
+  .lg\:focus\:placeholder-dove:focus:-ms-input-placeholder {
     color: #6f6f6c;
   }
 
-  .lg\:focus\:placeholder-dove-gray:focus::-ms-input-placeholder {
+  .lg\:focus\:placeholder-dove:focus::-ms-input-placeholder {
     color: #6f6f6c;
   }
 
-  .lg\:focus\:placeholder-dove-gray:focus::placeholder {
+  .lg\:focus\:placeholder-dove:focus::placeholder {
     color: #6f6f6c;
   }
 
@@ -43722,15 +44098,19 @@ video {
     color: #47c386;
   }
 
-  .lg\:text-astro-blue {
+  .lg\:text-mint-fade {
+    color: #99dbbb;
+  }
+
+  .lg\:text-astro {
     color: #1b465b;
   }
 
-  .lg\:text-summary-sky {
+  .lg\:text-sky {
     color: #36b2db;
   }
 
-  .lg\:text-dove-gray {
+  .lg\:text-dove {
     color: #6f6f6c;
   }
 
@@ -44110,15 +44490,19 @@ video {
     color: #47c386;
   }
 
-  .lg\:hover\:text-astro-blue:hover {
+  .lg\:hover\:text-mint-fade:hover {
+    color: #99dbbb;
+  }
+
+  .lg\:hover\:text-astro:hover {
     color: #1b465b;
   }
 
-  .lg\:hover\:text-summary-sky:hover {
+  .lg\:hover\:text-sky:hover {
     color: #36b2db;
   }
 
-  .lg\:hover\:text-dove-gray:hover {
+  .lg\:hover\:text-dove:hover {
     color: #6f6f6c;
   }
 
@@ -44498,15 +44882,19 @@ video {
     color: #47c386;
   }
 
-  .lg\:focus\:text-astro-blue:focus {
+  .lg\:focus\:text-mint-fade:focus {
+    color: #99dbbb;
+  }
+
+  .lg\:focus\:text-astro:focus {
     color: #1b465b;
   }
 
-  .lg\:focus\:text-summary-sky:focus {
+  .lg\:focus\:text-sky:focus {
     color: #36b2db;
   }
 
-  .lg\:focus\:text-dove-gray:focus {
+  .lg\:focus\:text-dove:focus {
     color: #6f6f6c;
   }
 
@@ -45405,15 +45793,19 @@ video {
     background-color: #47c386;
   }
 
-  .xl\:bg-astro-blue {
+  .xl\:bg-mint-fade {
+    background-color: #99dbbb;
+  }
+
+  .xl\:bg-astro {
     background-color: #1b465b;
   }
 
-  .xl\:bg-summary-sky {
+  .xl\:bg-sky {
     background-color: #36b2db;
   }
 
-  .xl\:bg-dove-gray {
+  .xl\:bg-dove {
     background-color: #6f6f6c;
   }
 
@@ -45793,15 +46185,19 @@ video {
     background-color: #47c386;
   }
 
-  .xl\:hover\:bg-astro-blue:hover {
+  .xl\:hover\:bg-mint-fade:hover {
+    background-color: #99dbbb;
+  }
+
+  .xl\:hover\:bg-astro:hover {
     background-color: #1b465b;
   }
 
-  .xl\:hover\:bg-summary-sky:hover {
+  .xl\:hover\:bg-sky:hover {
     background-color: #36b2db;
   }
 
-  .xl\:hover\:bg-dove-gray:hover {
+  .xl\:hover\:bg-dove:hover {
     background-color: #6f6f6c;
   }
 
@@ -46181,15 +46577,19 @@ video {
     background-color: #47c386;
   }
 
-  .xl\:focus\:bg-astro-blue:focus {
+  .xl\:focus\:bg-mint-fade:focus {
+    background-color: #99dbbb;
+  }
+
+  .xl\:focus\:bg-astro:focus {
     background-color: #1b465b;
   }
 
-  .xl\:focus\:bg-summary-sky:focus {
+  .xl\:focus\:bg-sky:focus {
     background-color: #36b2db;
   }
 
-  .xl\:focus\:bg-dove-gray:focus {
+  .xl\:focus\:bg-dove:focus {
     background-color: #6f6f6c;
   }
 
@@ -46649,15 +47049,19 @@ video {
     border-color: #47c386;
   }
 
-  .xl\:border-astro-blue {
+  .xl\:border-mint-fade {
+    border-color: #99dbbb;
+  }
+
+  .xl\:border-astro {
     border-color: #1b465b;
   }
 
-  .xl\:border-summary-sky {
+  .xl\:border-sky {
     border-color: #36b2db;
   }
 
-  .xl\:border-dove-gray {
+  .xl\:border-dove {
     border-color: #6f6f6c;
   }
 
@@ -47037,15 +47441,19 @@ video {
     border-color: #47c386;
   }
 
-  .xl\:hover\:border-astro-blue:hover {
+  .xl\:hover\:border-mint-fade:hover {
+    border-color: #99dbbb;
+  }
+
+  .xl\:hover\:border-astro:hover {
     border-color: #1b465b;
   }
 
-  .xl\:hover\:border-summary-sky:hover {
+  .xl\:hover\:border-sky:hover {
     border-color: #36b2db;
   }
 
-  .xl\:hover\:border-dove-gray:hover {
+  .xl\:hover\:border-dove:hover {
     border-color: #6f6f6c;
   }
 
@@ -47425,15 +47833,19 @@ video {
     border-color: #47c386;
   }
 
-  .xl\:focus\:border-astro-blue:focus {
+  .xl\:focus\:border-mint-fade:focus {
+    border-color: #99dbbb;
+  }
+
+  .xl\:focus\:border-astro:focus {
     border-color: #1b465b;
   }
 
-  .xl\:focus\:border-summary-sky:focus {
+  .xl\:focus\:border-sky:focus {
     border-color: #36b2db;
   }
 
-  .xl\:focus\:border-dove-gray:focus {
+  .xl\:focus\:border-dove:focus {
     border-color: #6f6f6c;
   }
 
@@ -52187,63 +52599,83 @@ video {
     color: #47c386;
   }
 
-  .xl\:placeholder-astro-blue::-webkit-input-placeholder {
+  .xl\:placeholder-mint-fade::-webkit-input-placeholder {
+    color: #99dbbb;
+  }
+
+  .xl\:placeholder-mint-fade::-moz-placeholder {
+    color: #99dbbb;
+  }
+
+  .xl\:placeholder-mint-fade:-ms-input-placeholder {
+    color: #99dbbb;
+  }
+
+  .xl\:placeholder-mint-fade::-ms-input-placeholder {
+    color: #99dbbb;
+  }
+
+  .xl\:placeholder-mint-fade::placeholder {
+    color: #99dbbb;
+  }
+
+  .xl\:placeholder-astro::-webkit-input-placeholder {
     color: #1b465b;
   }
 
-  .xl\:placeholder-astro-blue::-moz-placeholder {
+  .xl\:placeholder-astro::-moz-placeholder {
     color: #1b465b;
   }
 
-  .xl\:placeholder-astro-blue:-ms-input-placeholder {
+  .xl\:placeholder-astro:-ms-input-placeholder {
     color: #1b465b;
   }
 
-  .xl\:placeholder-astro-blue::-ms-input-placeholder {
+  .xl\:placeholder-astro::-ms-input-placeholder {
     color: #1b465b;
   }
 
-  .xl\:placeholder-astro-blue::placeholder {
+  .xl\:placeholder-astro::placeholder {
     color: #1b465b;
   }
 
-  .xl\:placeholder-summary-sky::-webkit-input-placeholder {
+  .xl\:placeholder-sky::-webkit-input-placeholder {
     color: #36b2db;
   }
 
-  .xl\:placeholder-summary-sky::-moz-placeholder {
+  .xl\:placeholder-sky::-moz-placeholder {
     color: #36b2db;
   }
 
-  .xl\:placeholder-summary-sky:-ms-input-placeholder {
+  .xl\:placeholder-sky:-ms-input-placeholder {
     color: #36b2db;
   }
 
-  .xl\:placeholder-summary-sky::-ms-input-placeholder {
+  .xl\:placeholder-sky::-ms-input-placeholder {
     color: #36b2db;
   }
 
-  .xl\:placeholder-summary-sky::placeholder {
+  .xl\:placeholder-sky::placeholder {
     color: #36b2db;
   }
 
-  .xl\:placeholder-dove-gray::-webkit-input-placeholder {
+  .xl\:placeholder-dove::-webkit-input-placeholder {
     color: #6f6f6c;
   }
 
-  .xl\:placeholder-dove-gray::-moz-placeholder {
+  .xl\:placeholder-dove::-moz-placeholder {
     color: #6f6f6c;
   }
 
-  .xl\:placeholder-dove-gray:-ms-input-placeholder {
+  .xl\:placeholder-dove:-ms-input-placeholder {
     color: #6f6f6c;
   }
 
-  .xl\:placeholder-dove-gray::-ms-input-placeholder {
+  .xl\:placeholder-dove::-ms-input-placeholder {
     color: #6f6f6c;
   }
 
-  .xl\:placeholder-dove-gray::placeholder {
+  .xl\:placeholder-dove::placeholder {
     color: #6f6f6c;
   }
 
@@ -54127,63 +54559,83 @@ video {
     color: #47c386;
   }
 
-  .xl\:focus\:placeholder-astro-blue:focus::-webkit-input-placeholder {
+  .xl\:focus\:placeholder-mint-fade:focus::-webkit-input-placeholder {
+    color: #99dbbb;
+  }
+
+  .xl\:focus\:placeholder-mint-fade:focus::-moz-placeholder {
+    color: #99dbbb;
+  }
+
+  .xl\:focus\:placeholder-mint-fade:focus:-ms-input-placeholder {
+    color: #99dbbb;
+  }
+
+  .xl\:focus\:placeholder-mint-fade:focus::-ms-input-placeholder {
+    color: #99dbbb;
+  }
+
+  .xl\:focus\:placeholder-mint-fade:focus::placeholder {
+    color: #99dbbb;
+  }
+
+  .xl\:focus\:placeholder-astro:focus::-webkit-input-placeholder {
     color: #1b465b;
   }
 
-  .xl\:focus\:placeholder-astro-blue:focus::-moz-placeholder {
+  .xl\:focus\:placeholder-astro:focus::-moz-placeholder {
     color: #1b465b;
   }
 
-  .xl\:focus\:placeholder-astro-blue:focus:-ms-input-placeholder {
+  .xl\:focus\:placeholder-astro:focus:-ms-input-placeholder {
     color: #1b465b;
   }
 
-  .xl\:focus\:placeholder-astro-blue:focus::-ms-input-placeholder {
+  .xl\:focus\:placeholder-astro:focus::-ms-input-placeholder {
     color: #1b465b;
   }
 
-  .xl\:focus\:placeholder-astro-blue:focus::placeholder {
+  .xl\:focus\:placeholder-astro:focus::placeholder {
     color: #1b465b;
   }
 
-  .xl\:focus\:placeholder-summary-sky:focus::-webkit-input-placeholder {
+  .xl\:focus\:placeholder-sky:focus::-webkit-input-placeholder {
     color: #36b2db;
   }
 
-  .xl\:focus\:placeholder-summary-sky:focus::-moz-placeholder {
+  .xl\:focus\:placeholder-sky:focus::-moz-placeholder {
     color: #36b2db;
   }
 
-  .xl\:focus\:placeholder-summary-sky:focus:-ms-input-placeholder {
+  .xl\:focus\:placeholder-sky:focus:-ms-input-placeholder {
     color: #36b2db;
   }
 
-  .xl\:focus\:placeholder-summary-sky:focus::-ms-input-placeholder {
+  .xl\:focus\:placeholder-sky:focus::-ms-input-placeholder {
     color: #36b2db;
   }
 
-  .xl\:focus\:placeholder-summary-sky:focus::placeholder {
+  .xl\:focus\:placeholder-sky:focus::placeholder {
     color: #36b2db;
   }
 
-  .xl\:focus\:placeholder-dove-gray:focus::-webkit-input-placeholder {
+  .xl\:focus\:placeholder-dove:focus::-webkit-input-placeholder {
     color: #6f6f6c;
   }
 
-  .xl\:focus\:placeholder-dove-gray:focus::-moz-placeholder {
+  .xl\:focus\:placeholder-dove:focus::-moz-placeholder {
     color: #6f6f6c;
   }
 
-  .xl\:focus\:placeholder-dove-gray:focus:-ms-input-placeholder {
+  .xl\:focus\:placeholder-dove:focus:-ms-input-placeholder {
     color: #6f6f6c;
   }
 
-  .xl\:focus\:placeholder-dove-gray:focus::-ms-input-placeholder {
+  .xl\:focus\:placeholder-dove:focus::-ms-input-placeholder {
     color: #6f6f6c;
   }
 
-  .xl\:focus\:placeholder-dove-gray:focus::placeholder {
+  .xl\:focus\:placeholder-dove:focus::placeholder {
     color: #6f6f6c;
   }
 
@@ -54802,15 +55254,19 @@ video {
     color: #47c386;
   }
 
-  .xl\:text-astro-blue {
+  .xl\:text-mint-fade {
+    color: #99dbbb;
+  }
+
+  .xl\:text-astro {
     color: #1b465b;
   }
 
-  .xl\:text-summary-sky {
+  .xl\:text-sky {
     color: #36b2db;
   }
 
-  .xl\:text-dove-gray {
+  .xl\:text-dove {
     color: #6f6f6c;
   }
 
@@ -55190,15 +55646,19 @@ video {
     color: #47c386;
   }
 
-  .xl\:hover\:text-astro-blue:hover {
+  .xl\:hover\:text-mint-fade:hover {
+    color: #99dbbb;
+  }
+
+  .xl\:hover\:text-astro:hover {
     color: #1b465b;
   }
 
-  .xl\:hover\:text-summary-sky:hover {
+  .xl\:hover\:text-sky:hover {
     color: #36b2db;
   }
 
-  .xl\:hover\:text-dove-gray:hover {
+  .xl\:hover\:text-dove:hover {
     color: #6f6f6c;
   }
 
@@ -55578,15 +56038,19 @@ video {
     color: #47c386;
   }
 
-  .xl\:focus\:text-astro-blue:focus {
+  .xl\:focus\:text-mint-fade:focus {
+    color: #99dbbb;
+  }
+
+  .xl\:focus\:text-astro:focus {
     color: #1b465b;
   }
 
-  .xl\:focus\:text-summary-sky:focus {
+  .xl\:focus\:text-sky:focus {
     color: #36b2db;
   }
 
-  .xl\:focus\:text-dove-gray:focus {
+  .xl\:focus\:text-dove:focus {
     color: #6f6f6c;
   }
 

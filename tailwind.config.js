@@ -6,9 +6,10 @@ module.exports = {
     extend: {
       colors: {
         mint: '#47c386',
-        'astro-blue': '#1b465b',
-        'summary-sky': '#36b2db',
-        'dove-gray': '#6f6f6c',
+        'mint-fade': '#99dbbb',
+        astro: '#1b465b',
+        sky: '#36b2db',
+        dove: '#6f6f6c',
       },
     },
   },

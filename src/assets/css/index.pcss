@@ -1,15 +1,63 @@
 @tailwind base;
 @tailwind components;
 
+::-moz-selection,
+::selection {
+  @apply bg-mint-fade text-black;
+}
+
+p {
+  @apply mb-6;
+}
+a {
+  @apply text-mint border-b-2 border-mint-fade;
+}
+a:hover {
+  @apply border-mint;
+}
+
+details {
+  @apply text-gray-800;
+}
+summary {
+  @apply block relative text-black;
+}
+summary:hover {
+  @apply text-mint;
+}
+summary::before,
+summary::after {
+  width: 0.75em;
+  height: 2px;
+  top: 50%;
+  content: "";
+  background-color: currentColor;
+  transform: translateY(-50%);
+  transition: transform 0.2s ease-in-out;
+  @apply absolute right-0 text-right;
+}
+summary::after {
+  transform: translateY(-50%) rotate(90deg);
+}
+[open] summary::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+
 .section-video {
   background: linear-gradient(
     180deg,
     theme("colors.gray.100") 20%,
-    theme("colors.mint") 20%
+    theme("colors.astro") 20%
   );
 }
-.section-logos li {
-  @apply mb-10 mr-10;
+.section-questions details:not(summary) div {
+  @apply mt-4 mb-8;
+}
+.section-questions summary {
+  @apply text-xl mb-4 pb-4 border-b border-gray-300 cursor-pointer select-none;
 }
 
 @tailwind utilities;
