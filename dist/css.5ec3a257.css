@@ -627,6 +627,11 @@ video {
   }
 }
 
+body,
+html {
+  scroll-behavior: smooth;
+}
+
 ::-moz-selection {
   background-color: #99dbbb;
   color: #000;
@@ -650,10 +655,6 @@ a {
 
 a:hover {
   border-color: #47c386;
-}
-
-details {
-  color: #2d3748;
 }
 
 summary {
@@ -698,27 +699,21 @@ summary::-webkit-details-marker {
   display: none;
 }
 
-.section-video {
-  background: -webkit-gradient(
-    linear,
-    left top, left bottom,
-    color-stop(20%, #f7fafc),
-    color-stop(20%, #1b465b)
-  );
-  background: linear-gradient(
-    180deg,
-    #f7fafc 20%,
-    #1b465b 20%
-  );
+@media (min-width: 640px) {
+  .section-video {
+    top: -5rem;
+  }
 }
 
-.section-questions details:not(summary) div {
+.section-questions details > div {
   margin-top: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+  font-size: 0.875rem;
+  color: #4a5568;
 }
 
 .section-questions summary {
-  font-size: 1.25rem;
+  font-size: 1rem;
   margin-bottom: 1rem;
   padding-bottom: 1rem;
   border-bottom-width: 1px;
@@ -728,6 +723,16 @@ summary::-webkit-details-marker {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+@media (min-width: 640px) {
+  .section-questions details > div {
+    font-size: 1rem;
+  }
+
+  .section-questions summary {
+    font-size: 1.125rem;
+  }
 }
 
 .sr-only {

@@ -5,34 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="assets/css/index.css" />
-    <script
-      src="https://fast.wistia.com/embed/medias/5eqyexs05y.jsonp"
-      async
-    ></script>
-    <script
-      src="https://fast.wistia.com/assets/external/E-v1.js"
-      async
-    ></script>
+
     <title>100 UPG</title>
   </head>
   <body>
-    <header class="bg-gray-100">
-      <div class="container mx-auto text-center py-24 px-6">
+    <header
+      class="bg-gray-100 bg-center bg-cover lg:bg-contain bg-no-repeat"
+      style="background-image: url('assets/img/header-bg.png');"
+    >
+      <nav class="container mx-auto px-6">
+        <ul class="text-center mb-4 py-4 border-b border-gray-300">
+          <li class="w-full sm:w-auto inline-block mr-6 mb-2 sm:mb-0">
+            <a href="#our-story">Our Story</a>
+          </li>
+          <li class="w-full sm:w-auto inline-block mr-6 mb-2 sm:mb-0">
+            <a href="#faqs">FAQs</a>
+          </li>
+          <li class="w-full sm:w-auto inline-block">
+            <a href="#what-can-i-do">What Can I Do?</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="container mx-auto text-center py-10 sm:pt-20 sm:pb-40 px-6">
         <h1 class="text-4xl">
-          <!-- TODO: Replace with .png and alt text -->
-          <include src="partials/logo.html" />
+          <img
+            class="w-32 sm:w-40 md:w-48 mx-auto"
+            src="./assets/img/100upg-logo.png"
+            alt="100 UPG Cooperative"
+          />
         </h1>
         <h2
-          class="text-mint font-bold text-2xl md:text-3xl max-w-2xl mx-auto mt-6"
+          class="text-mint font-bold leading-tight sm:leading-normal text-2xl md:text-3xl max-w-2xl mx-auto mt-6"
         >
           Catalyzing church planting movements among 100 unreached people
           groups.
         </h2>
       </div>
     </header>
-    <section class="bg-mint section-video">
+    <section class="bg-astro">
       <div class="container mx-auto">
-        <div class="max-w-3xl mx-auto">
+        <div
+          class="max-w-3xl mx-auto py-6 px-6 bg-mint-fade sm:py-0 sm:px-0 relative section-video"
+        >
           <include src="partials/video.html" />
         </div>
         <div class="pt-16 pb-10 section-logos">
@@ -62,7 +76,7 @@
         </div>
       </div>
     </section>
-    <section class="bg-gray-100">
+    <section class="bg-gray-100" id="our-story">
       <div class="bg-mint">
         <div class="container mx-auto pt-12 pb-10 flex lg:justify-end">
           <div class="md:w-1/2 px-6 lg:pl-12 mb-8 lg:mb-0">
@@ -106,14 +120,14 @@
         </div>
       </div>
     </section>
-    <section class="bg-gray-100 pb-16 lg:pb-24">
+    <section class="bg-gray-100 pb-16 lg:pb-24" id="faqs">
       <div class="bg-astro pt-12 pb-32">
         <h3 class="text-4xl text-center font-bold text-white">FAQs</h3>
       </div>
-      <div
-        class="max-w-3xl mx-auto rounded shadow-lg bg-white py-12 px-12 -mt-24"
-      >
-        <div class="section-questions">
+      <div class="container mx-auto px-6">
+        <div
+          class="lg:max-w-3xl mx-auto rounded shadow-lg bg-white py-4 px-4 sm:py-8 sm:px-8 md:py-12 md:px-12 -mt-24 section-questions"
+        >
           <details>
             <summary>
               What is the 100 UPG Cooperative?
@@ -274,12 +288,10 @@
           </details>
           <details>
             <summary>
-              <span class="inline-block"
-                >Why not keep the traditional model of missions, in which a
-                single church partners with a single mission agency to send
-                their missionary?
-              </span></summary
-            >
+              Why not keep the traditional model of missions, in which a single
+              church partners with a single mission agency to send their
+              missionary?
+            </summary>
             <div>
               <p>
                 The 100 UPG Cooperative pursues greater cooperation between
@@ -315,7 +327,7 @@
         </div>
       </div>
     </section>
-    <section class="bg-gray-100">
+    <section class="bg-gray-100" id="what-can-i-do">
       <div class="bg-mint">
         <div class="container mx-auto pt-12 pb-10 flex lg:justify-start">
           <div class="md:w-1/2 px-6 lg:pr-12 mb-8 lg:mb-0">
@@ -366,6 +378,14 @@
       </div>
     </footer>
 
+    <script
+      src="https://fast.wistia.com/embed/medias/5eqyexs05y.jsonp"
+      async
+    ></script>
+    <script
+      src="https://fast.wistia.com/assets/external/E-v1.js"
+      async
+    ></script>
     <script src="assets/js/index.js"></script>
   </body>
 </html>

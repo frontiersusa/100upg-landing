@@ -1,6 +1,11 @@
 @tailwind base;
 @tailwind components;
 
+body,
+html {
+  scroll-behavior: smooth;
+}
+
 ::-moz-selection,
 ::selection {
   @apply bg-mint-fade text-black;
@@ -14,10 +19,6 @@ a {
 }
 a:hover {
   @apply border-mint;
-}
-
-details {
-  @apply text-gray-800;
 }
 summary {
   @apply block relative text-black;
@@ -46,18 +47,24 @@ summary::-webkit-details-marker {
   display: none;
 }
 
-.section-video {
-  background: linear-gradient(
-    180deg,
-    theme("colors.gray.100") 20%,
-    theme("colors.astro") 20%
-  );
+@screen sm {
+  .section-video {
+    top: -5rem;
+  }
 }
-.section-questions details:not(summary) div {
-  @apply mt-4 mb-8;
+.section-questions details > div {
+  @apply mt-4 mb-12 text-sm text-gray-700;
 }
 .section-questions summary {
-  @apply text-xl mb-4 pb-4 border-b border-gray-300 cursor-pointer select-none;
+  @apply text-base mb-4 pb-4 border-b border-gray-300 cursor-pointer select-none;
+}
+@screen sm {
+  .section-questions details > div {
+    @apply text-base;
+  }
+  .section-questions summary {
+    @apply text-lg;
+  }
 }
 
 @tailwind utilities;
