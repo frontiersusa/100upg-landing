@@ -14,7 +14,7 @@ You can get the contents inside the `/dist` directory, or download directly usin
 
 ## Run and/or develop locally
 
-1. Download
+1. Clone repo
 2. Run `npm install`
 3. Run `npm run start` to develop
 4. Run `npm run build` to build for production
