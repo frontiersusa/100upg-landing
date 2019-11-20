@@ -699,12 +699,6 @@ summary::-webkit-details-marker {
   display: none;
 }
 
-@media (min-width: 640px) {
-  .section-video {
-    top: -5rem;
-  }
-}
-
 .section-questions details > div {
   margin-top: 1rem;
   margin-bottom: 3rem;
@@ -726,6 +720,10 @@ summary::-webkit-details-marker {
 }
 
 @media (min-width: 640px) {
+  .section-video {
+    top: -5rem;
+  }
+
   .section-questions details > div {
     font-size: 1rem;
   }

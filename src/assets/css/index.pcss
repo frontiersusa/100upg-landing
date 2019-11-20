@@ -46,12 +46,6 @@ summary::after {
 summary::-webkit-details-marker {
   display: none;
 }
-
-@screen sm {
-  .section-video {
-    top: -5rem;
-  }
-}
 .section-questions details > div {
   @apply mt-4 mb-12 text-sm text-gray-700;
 }
@@ -59,6 +53,9 @@ summary::-webkit-details-marker {
   @apply text-base mb-4 pb-4 border-b border-gray-300 cursor-pointer select-none;
 }
 @screen sm {
+  .section-video {
+    top: -5rem;
+  }
   .section-questions details > div {
     @apply text-base;
   }
