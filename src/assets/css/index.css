@@ -723,6 +723,11 @@ details > div p:last-of-type {
   margin-bottom: 0;
 }
 
+summary > span {
+  display: inline-block;
+  margin-right: 1.25rem;
+}
+
 summary {
   font-size: 1rem;
   margin-top: 1.5rem;
