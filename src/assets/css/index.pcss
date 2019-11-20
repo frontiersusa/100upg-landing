@@ -46,20 +46,32 @@ summary::after {
 summary::-webkit-details-marker {
   display: none;
 }
-.section-questions details > div {
-  @apply mt-4 mb-12 text-sm text-gray-700;
+.section-logos li {
+  @apply my-4 mx-4;
 }
-.section-questions summary {
-  @apply text-base mb-4 pb-4 border-b border-gray-300 cursor-pointer select-none;
+.section-logos img {
+  @apply mx-auto;
+}
+details > div {
+  @apply py-6 px-6 bg-gray-100 mb-8 text-sm text-gray-700;
+}
+details > div p:last-of-type {
+  @apply mb-0;
+}
+summary {
+  @apply text-base mt-6 pb-4 border-b border-gray-300 cursor-pointer select-none;
 }
 @screen sm {
   .section-video {
     top: -5rem;
   }
-  .section-questions details > div {
+  .section-logos li {
+    flex: 1 0 calc(33% - theme("margin.8"));
+  }
+  details > div {
     @apply text-base;
   }
-  .section-questions summary {
+  summary {
     @apply text-lg;
   }
 }
